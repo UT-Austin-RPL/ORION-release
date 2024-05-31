@@ -69,8 +69,7 @@ Video with Open-World Object Graphs</title>
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">ORION: Vision-based Manipulation from Single Human
-Video with Open-World Object Graphs</h1>
+          <h1 class="title is-2 publication-title">ORION: Vision-based Manipulation from Single Human Video with Open-World Object Graphs</h1>
           
           <!-- include the title info. It's located in _includes/title_info.html -->
           <div class="publication-authors">
@@ -111,6 +110,24 @@ Video with Open-World Object Graphs</h1>
 
   <div class="column has-text-centered">
     <div class="publication-links">
+      <span class="link-block">
+        <a href="http://arxiv.org/abs/2405.20321"
+           class="external-link button is-normal is-rounded">
+          <span class="icon">
+              <i class="ai ai-arxiv"></i>
+          </span>
+          <span>arXiv</span>
+        </a>
+      </span>
+      <span class="link-block">
+        <a href="https://youtu.be/hubAbximDuc"
+           class="external-link button is-normal is-rounded">
+          <span class="icon">
+              <i class="fab fa-youtube"></i>
+          </span>
+          <span>Video</span>
+        </a>
+      </span> 
       <!-- PDF Link. -->
       <!-- <span class="link-block">
         <a href="https://zhuyifengzju.github.io/files/ORION-release_CoRL2023.pdf"
@@ -231,11 +248,11 @@ Video with Open-World Object Graphs</h1>
       <div class="column is-four-fifths">
         <h2 class="subtitle is-3">Method - Plan Generation from Video</h2>
         <div class="hero-body">
-          <img id="teaser" src="./static/images/model_figure_part_1.svg" alt="Nerfies teaser image."/>
+          <!-- <img id="teaser" src="./static/images/model_figure_part_1.svg" alt="Nerfies teaser image."/>
           <h2 class="subtitle">
             From a single human demonstration, ORION generates a manipulation
             plan in order for subsequent policies to synthesize actions.
-          </h2>
+          </h2> -->
           <div class="content has-text-justified">
             ORION first tracks the objects and keypoints across the video
             frames. Then keyframes are identified based on the velocity
@@ -254,7 +271,7 @@ Video with Open-World Object Graphs</h1>
   <div class="column is-four-fifths">
     <h4 class="subtitle is-3">Method - Action Synthesis of ORION Policy</h4>
     <div class="hero-body">
-      <img id="teaser" src="./static/images/model_figure_part_2.svg" alt="Nerfies teaser image."/>
+      <!-- <img id="teaser" src="./static/images/model_figure_part_2.svg" alt="Nerfies teaser image."/>
       <h2 class="subtitle">
         ORION is able to learn a policy that generalizes from the initial demonstration
       </h2>
@@ -267,7 +284,7 @@ Video with Open-World Object Graphs</h1>
         predicted trajectories are then used to optimize the SE(3) action
         sequence of the robot end effector, which is subsequently used to
         command the robot.
-    </div>
+    </div> -->
     </div>
   </div>
 </div>
@@ -342,13 +359,13 @@ Video with Open-World Object Graphs</h1>
       <!-- Paper video. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="subtitle is-3">[PLACEHOLDER - Failure Example]</h2>
+          <h2 class="subtitle is-3">[Failure Example]</h2>
           <p class="content has-text-justified"> Typical failure modes of ORION policies are due to missed grasp. Fail to complete the goal due to misalignment during insertion, or failed to place the object on the correct region in the plate.</p>
         </div>
       </div>
     </div>
     <br>
-    <div class="container">
+    <!-- <div class="container">
         <div class="video-container" style="display: flex; justify-content: center;">
           
               <div class="item item-failure-1" style="margin: 0 5px;">
@@ -359,7 +376,7 @@ Video with Open-World Object Graphs</h1>
               </div>
           
         </div>
-    </div>
+    </div> -->
   </div>
 </section>
 <!-- / Carousel Video of Failure Rollouts. -->
@@ -368,12 +385,12 @@ Video with Open-World Object Graphs</h1>
 <section class="section">
   <div class="container is-max-desktop">
     <a href="#" class="toggleButton"
-    id="toggleButton-Pick-Place-Mug">Qualitative Experiments ▼</a>
+    id="toggleButton-Pick-Place-Mug">Qualitative Experiments (Soon ...) ▼</a>
     <!-- Content to be toggled -->
     <div class="toggleContent" id="toggleContent-Pick-Place-Mug">
       <div class="example-slick">
         
-              <div class="item item-canonical is-centered">
+              <!-- <div class="item item-canonical is-centered">
                   <div class="caption"> Canonical Setup </div>
                   <video poster="" id="canonical" autoplay controls muted loop playsinline height="100%">
                   <source src="./static/videos/real_robot_rollouts/pick_place_mug_aug_demo_canonical.mp4"
@@ -381,7 +398,7 @@ Video with Open-World Object Graphs</h1>
                   </video>            
                   <br>
               </div>
-        
+         -->
               <!-- <div class="item item-camera is-centered">
                   <div class="caption"> Camera-Shift </div>
                   <video poster="" id="camera" autoplay controls muted loop playsinline height="100%">
