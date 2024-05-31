@@ -247,11 +247,11 @@ Video with Open-World Object Graphs</title>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="subtitle is-3">Method - Plan Generation from Video</h2>
-        <div class="hero-body">
-          <!-- <img id="teaser" src="./static/images/model_figure_part_1.svg" alt="Nerfies teaser image."/>
-          <h2 class="subtitle">
-            From a single human demonstration, ORION generates a manipulation
-            plan in order for subsequent policies to synthesize actions.
+        <!-- <div class="hero-body"> -->
+          <div>
+          <img id="teaser" src="./static/imgs/plan_generation.svg" alt="No image found."/>
+          <!-- <h2 class="subtitle">
+            ORION imitates manipulation from a single human video.
           </h2> -->
           <div class="content has-text-justified">
             ORION first tracks the objects and keypoints across the video
@@ -270,196 +270,72 @@ Video with Open-World Object Graphs</title>
   <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
     <h4 class="subtitle is-3">Method - Action Synthesis of ORION Policy</h4>
-    <div class="hero-body">
-      <!-- <img id="teaser" src="./static/images/model_figure_part_2.svg" alt="Nerfies teaser image."/>
-      <h2 class="subtitle">
-        ORION is able to learn a policy that generalizes from the initial demonstration
-      </h2>
+    <div>
+      <img id="teaser" src="./static/imgs/action_synthesis.svg" alt="No image found."/>
+      <!-- <h2 class="subtitle">
+        At test time, ORION synthesizes actions for the robot arm to execute.
+      </h2> -->
       <div class="content has-text-justified">
-        ORION first localizes task-relevant objects at test time and retrieves
+        At test time, ORION first localizes task-relevant objects and retrieves
         the matched OOG from the generated manipulation plan. Then ORION uses
         the retrieved OOGs to predict the object motions by first computing
-        global registration of object point clouds and then transforming the
+        global registration of object point clouds and then warping the
         observed keypoint trajectories from video into the workspace. The
         predicted trajectories are then used to optimize the SE(3) action
         sequence of the robot end effector, which is subsequently used to
         command the robot.
-    </div> -->
+    </div>
     </div>
   </div>
 </div>
 </div>
 </div>
 </section>
-
-<hr>
-<br>
-<!-- <br>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">[PLACEHOLDER - Interactive Results]</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            Use the mouse click to see the correspondence between the initial image and the target image. 
-          </p>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column">
-            <div id="canvas-container">
-              <canvas id="image-canvas" width="480" height="480"></canvas>
-              <canvas id="mask-canvas" width="480" height="480"></canvas>
-            </div>
-          </div>
-          <div class="column">
-            <div id="canvas-container">
-              <canvas id="dino-image-canvas" width="480" height="480"></canvas>
-              <canvas id="dino-mask-canvas" width="480" height="480"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <br>
-        <br/>
-      </div>
-    </div>
-</section> -->
-
-<br>
-
-<!-- <hr>
-<br>
-<br>
-
-<section class="section">
-
-  <div id="real-robot-results-div" style="justify-content: center;">
-  </div>
-  <h3 style="text-align: center!important;" class="title is-5">[PLACEHOLDER -
-  Quantitative Experiments]</h3>
-</section>
-
-<br>
-
-<hr>
-<br>
-<br> -->
-
-<!-- Carousel Video of Failure Rollouts. -->
-<section class="hero is-small">
-  <div class="hero-body">
-
-    <div class="container is-max-desktop">
-
-      <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="subtitle is-3">[Failure Example]</h2>
-          <p class="content has-text-justified"> Typical failure modes of ORION policies are due to missed grasp. Fail to complete the goal due to misalignment during insertion, or failed to place the object on the correct region in the plate.</p>
-        </div>
-      </div>
-    </div>
-    <br>
-    <!-- <div class="container">
-        <div class="video-container" style="display: flex; justify-content: center;">
-          
-              <div class="item item-failure-1" style="margin: 0 5px;">
-                  <video poster="" id="failure_1" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/failure_videos/1.mp4"
-                          type="video/mp4">
-                  </video>
-              </div>
-          
-        </div>
-    </div> -->
-  </div>
-</section>
-<!-- / Carousel Video of Failure Rollouts. -->
 
 <br><hr><br>
 <section class="section">
   <div class="container is-max-desktop">
-    <a href="#" class="toggleButton"
-    id="toggleButton-Pick-Place-Mug">Qualitative Experiments (Soon ...) ▼</a>
+    <p class="carousel-title" id="toggleButton-human-video-demo">Human Video Demos</p>
     <!-- Content to be toggled -->
-    <div class="toggleContent" id="toggleContent-Pick-Place-Mug">
+    <div class="toggleContent" id="toggleContent-human-video-demo">
       <div class="example-slick">
-        
-              <!-- <div class="item item-canonical is-centered">
-                  <div class="caption"> Canonical Setup </div>
-                  <video poster="" id="canonical" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/real_robot_rollouts/pick_place_mug_aug_demo_canonical.mp4"
-                          type="video/mp4">
-                  </video>            
+        {% for video in site.data.video_human_demo %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay controls muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> Task name: {{ video.caption }} </div>         
                   <br>
               </div>
-         -->
-              <!-- <div class="item item-camera is-centered">
-                  <div class="caption"> Camera-Shift </div>
-                  <video poster="" id="camera" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/real_robot_rollouts/pick_place_mug_aug_demo_camera.mp4"
-                          type="video/mp4">
-                  </video>            
-                  <br>
-              </div>
-        
-              <div class="item item-background is-centered">
-                  <div class="caption"> Background-Change </div>
-                  <video poster="" id="background" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/real_robot_rollouts/pick_place_mug_aug_demo_distractions.mp4"
-                          type="video/mp4">
-                  </video>            
-                  <br>
-              </div>
-        
-              <div class="item item-new is-centered">
-                  <div class="caption"> New-Object </div>
-                  <video poster="" id="new" autoplay controls muted loop playsinline height="100%">
-                  <source src="./static/videos/real_robot_rollouts/pick_place_mug_aug_demo_new_instances.mp4"
-                          type="video/mp4">
-                  </video>            
-                  <br>
-              </div> -->
-        
+        {% endfor %}
       </div>
     </div>
   </div>
-
-
-  <br>
+</section>
 
 <br><hr><br>
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section> -->
 
-  <!-- <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link">
-      More Research
-    </a>
-    <div class="navbar-dropdown">
-      <a class="navbar-item" href="https://ut-austin-rpl.github.io/VIOLA/">
-        VIOLA
-      </a>
-      <a class="navbar-item" href="https://ut-austin-rpl.github.io/rpl-BUDS/">
-        BUDS
-      </a>
+<section class="section">
+  <div class="container is-max-desktop">
+    <p class="carousel-title" id="toggleButton-human-video-demo">Failure Examples</p>
+    <!-- Content to be toggled -->
+    <div class="toggleContent" id="toggleContent-human-video-demo">
+      <div class="robot-three-video-slick">
+        {% for video in site.data.video_failure %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay controls muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> Task name: {{ video.caption }} </div>         
+                  <br>
+              </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div> -->
+</section>
 
 <footer class="footer">
   <div class="container">
