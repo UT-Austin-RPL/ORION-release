@@ -305,7 +305,7 @@ Video with Open-World Object Graphs</title>
                   <source src="{{ video.src }}"
                           type="{{ video.type }}">
                   </video>   
-                  <div class="caption" style="font-size:20px!important"> Task name: {{ video.caption }} </div>         
+                  <div class="caption" style="font-size:20px!important"> Task name: <br> {{ video.caption }} </div>         
                   <br>
               </div>
         {% endfor %}
@@ -328,12 +328,13 @@ Video with Open-World Object Graphs</title>
                   <source src="{{ video.src }}"
                           type="{{ video.type }}">
                   </video>   
-                  <div class="caption" style="font-size:20px!important"> Task name: {{ video.caption }} </div>         
+                  <!-- <div class="caption" style="font-size:20px!important"> Task name: {{ video.caption }} </div>          -->
                   <br>
               </div>
         {% endfor %}
       </div>
     </div>
+    <p class="content has-text-justified"> Typical failure modes of ORION policies are due to missed grasp. Fail to complete the goal due to misalignment during insertion, or failed to place the object on the correct region in the plate.</p>
   </div>
 </section>
 
