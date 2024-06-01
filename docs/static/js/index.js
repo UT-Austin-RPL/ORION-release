@@ -206,11 +206,11 @@ $(document).ready(function() {
       adaptiveHeight: true,
       // centerMode: true,
     });
-    $('.robot-1-video-slick').slick({
+    $('.robot-one-video-slick').slick({
       dots: true,
       infinite: true,
       // speed: 300,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       // vertical:true,
       arrows: true,

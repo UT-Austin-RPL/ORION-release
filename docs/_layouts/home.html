@@ -246,6 +246,31 @@ Video with Open-World Object Graphs</title>
     <!-- Method Overview. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <h2 class="subtitle is-3">Overview</h2>
+        <!-- <div class="hero-body"> -->
+          <div>
+          <!-- <img id="teaser" src="./static/imgs/plan_generation.svg" alt="No image found."/> -->
+          <!-- <h2 class="subtitle">
+            ORION imitates manipulation from a single human video.
+          </h2> -->
+          <video poster="" id="opening-video" autoplay controls muted loop playsinline height="100%">
+            <source src="static/videos/method/overview.mp4"
+                    type="video/mp4">
+            </video> 
+          <div class="content has-text-justified">
+            In this animation, we explain at the high-level how ORION is able to extract object-centric information for a robot to imitate the humana.
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Method Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="subtitle is-3">Method - Plan Generation from Video</h2>
         <!-- <div class="hero-body"> -->
           <div>
@@ -266,6 +291,8 @@ Video with Open-World Object Graphs</title>
     </div>
   </div>
 
+  <br>
+  <br>
   <div class="container is-max-desktop">
   <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
@@ -301,11 +328,82 @@ Video with Open-World Object Graphs</title>
       <div class="example-slick">
         {% for video in site.data.video_human_demo %}
               <div class="{{ video.class }} is-centered">
-                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay controls muted loop playsinline height="100%">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
                   <source src="{{ video.src }}"
                           type="{{ video.type }}">
                   </video>   
-                  <div class="caption" style="font-size:20px!important"> Task name: <br> {{ video.caption }} </div>         
+                  <div class="caption" style="font-size:20px!important"> Task: <br> {{ video.caption }} </div>         
+                  <br>
+              </div>
+        {% endfor %}
+      </div>
+    </div>
+    <p class="content has-text-justified"> Here we show all the videos of human demonstrations. All the videos are taken using an iPad that is statically placed on the table. </p>
+  </div>
+</section>
+
+<br><hr><br>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Content to be toggled -->
+    <h2 class="title is-3 sectiont-title">Real Robot Rollouts</h2>
+    <p class="content has-text-justified"> Here we provide rollout videos of ORION policies on real robots. All video playbacks are at 4x speed.</p>
+    <div class="toggleContent" id="toggleContent-human-video-demo">
+      <p class="carousel-title" id="toggleButton-human-video-demo">Task: Succulents-in-llama-vase</p>
+      <div class="robot-one-video-slick">
+        {% for video in site.data.video_llama %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> <br> {{ video.caption }} </div>         
+                  <br>
+              </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="toggleContent" id="toggleContent-human-video-demo">
+      <p class="carousel-title" id="toggleButton-human-video-demo">Task: Mug-on-coaster</p>
+      <div class="robot-one-video-slick">
+        {% for video in site.data.video_mug %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> <br> {{ video.caption }} </div>         
+                  <br>
+              </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="toggleContent" id="toggleContent-human-video-demo">
+      <p class="carousel-title" id="toggleButton-human-video-demo">Task: Complex-boat-assembly</p>
+      <div class="robot-one-video-slick">
+        {% for video in site.data.video_long_boat %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> <br> {{ video.caption }} </div>         
+                  <br>
+              </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="toggleContent" id="toggleContent-human-video-demo">
+      <p class="carousel-title" id="toggleButton-human-video-demo">Task: Prepare-breakfast</p>
+      <div class="robot-one-video-slick">
+        {% for video in site.data.video_breakfast %}
+              <div class="{{ video.class }} is-centered">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
+                  <source src="{{ video.src }}"
+                          type="{{ video.type }}">
+                  </video>   
+                  <div class="caption" style="font-size:20px!important"> <br> {{ video.caption }} </div>         
                   <br>
               </div>
         {% endfor %}
@@ -324,7 +422,7 @@ Video with Open-World Object Graphs</title>
       <div class="robot-three-video-slick">
         {% for video in site.data.video_failure %}
               <div class="{{ video.class }} is-centered">
-                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay controls muted loop playsinline height="100%">
+                  <video class="human-video is-centered" poster="" id="{{ video.id }}" autoplay muted loop playsinline height="100%">
                   <source src="{{ video.src }}"
                           type="{{ video.type }}">
                   </video>   
@@ -334,7 +432,7 @@ Video with Open-World Object Graphs</title>
         {% endfor %}
       </div>
     </div>
-    <p class="content has-text-justified"> Typical failure modes of ORION policies are due to missed grasp. Fail to complete the goal due to misalignment during insertion, or failed to place the object on the correct region in the plate.</p>
+    <p class="content has-text-justified"> Typical failure modes of ORION policies are due to missed grasp, fail to complete the goal due to misalignment during insertion, or fail to place the object on the correct region in the plate.</p>
   </div>
 </section>
 

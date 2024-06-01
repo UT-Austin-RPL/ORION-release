@@ -251,14 +251,14 @@ padding: 0 40px;
 
 .slick-prev:before {
   /* content: "<"; */
-  color: black!important;
+  color: #878787!important;
   font-size: 50px!important;
   left: -40px!important;
 }
 
 .slick-next:before {
   /* content: ">"; */
-  color: black!important;
+  color: #878787!important;
   font-size: 50px!important;
   right: -25px!important;
 }
@@ -328,4 +328,10 @@ padding: 0 40px;
   right: 0;
   text-align: center; /* Center the text horizontally */
 
+}
+
+.sectiont-title {
+  text-align: center;
+  left: 0;
+  right: 0;
 }
