@@ -25,6 +25,6 @@
 
 - class: item item-new
   id: "new"
-  src: ./static/videos/human_demo/rearrange.mp4
+  src: ./static/videos/human_demo/cheese_on_plate.mp4
   type: video/mp4
   caption: "Cheese-on-plate"
