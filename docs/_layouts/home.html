@@ -75,12 +75,12 @@ Video with Open-World Object Graphs</title>
           <div class="publication-authors">
     
       <span class="author-block">
-        <a href="https://zhuyifengzju.github.io/"> Yifeng Zhu<sup>1</sup>&nbsp&nbsp
+        <a href="https://zhuyifengzju.github.io/"> Yifeng Zhu<sup>*1</sup>&nbsp&nbsp
         </a>
         </span>
     
       <span class="author-block">
-        <a href="https://www.linkedin.com/in/arisrei-lim/"> Arisrei Lim<sup>1</sup>&nbsp&nbsp
+        <a href="https://www.linkedin.com/in/arisrei-lim/"> Arisrei Lim<sup>*1</sup>&nbsp&nbsp
         </a>
         </span>
     
@@ -96,8 +96,12 @@ Video with Open-World Object Graphs</title>
     
   </div>
 
+  <div class="author-contributions">
+    *Equal Contributions
+  </div>
+
   <div class="publication-authors">
-    
+
       <span class="author-block">
         <sup>1 </sup> The University of Texas at Austin
       </span>
@@ -111,13 +115,13 @@ Video with Open-World Object Graphs</title>
   <div class="column has-text-centered">
     <div class="publication-links">
       <span class="link-block">
-        <a href="static/files/ICRA_ORION_appendix.pdf"
+        <a href="https://arxiv.org/abs/2405.20321"
            class="external-link button is-normal is-rounded"
            download="ORION_Appendix.pdf">
           <span class="icon">
               <i class="fas fa-file-pdf"></i>
           </span>
-          <span>Appendix</span>
+          <span>Paper</span>
         </a>
     </span>    
       <!-- <span class="link-block">
@@ -211,7 +215,7 @@ Video with Open-World Object Graphs</title>
 
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <!-- <h2 class="title is-3">Video</h2> -->
         <div class="publication-video">
             <!-- <iframe src="" type="video/mp4"
@@ -232,11 +236,10 @@ Video with Open-World Object Graphs</title>
   
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           This work presents an object-centric approach to learning vision-based manipulation skills from human videos. We investigate the problem of robot manipulation via imitation in the <i>open-world</i> setting, where a robot learns to manipulate novel objects from a single video demonstration. We introduce ORION, an algorithm that tackles the problem by extracting an object-centric manipulation plan from a single RGB or RGB-D video and deriving a policy that conditions on the extracted plan. Our method enables the robot to learn from videos captured by daily mobile devices and to generalize the policies to deployment environments with varying visual backgrounds, camera angles, spatial layouts, and novel object instances. We systematically evaluate our method on both short-horizon and long-horizon tasks, using RGB-D and RGB-only demonstration videos. We observe an average success rate of 74.4%, demonstrating the efficacy of ORION in learning from a single human video in the open world. 
-
         </div>
       </div>
     </div>
@@ -254,7 +257,7 @@ Video with Open-World Object Graphs</title>
   <div class="container is-max-desktop">
     <!-- Method Overview. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="subtitle is-3">Overview</h2>
         <!-- <div class="hero-body"> -->
           <div>
@@ -279,11 +282,12 @@ Video with Open-World Object Graphs</title>
   <div class="container is-max-desktop">
     <!-- Method Overview. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="subtitle is-3">Method - Plan Generation from Video</h2>
         <!-- <div class="hero-body"> -->
           <div>
-          <img id="teaser" src="./static/imgs/plan_generation.svg" alt="No image found."/>
+          <!-- <img id="teaser" src="./static/imgs/plan_generation.svg" alt="No image found."/> -->
+          <img class="teaser" src="./static/imgs/method_plan_extraction.png" alt="No image found."/>
           <!-- <h2 class="subtitle">
             ORION imitates manipulation from a single human video.
           </h2> -->
@@ -304,22 +308,20 @@ Video with Open-World Object Graphs</title>
   <br>
   <div class="container is-max-desktop">
   <div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
+  <div class="column is-full">
     <h4 class="subtitle is-3">Method - Action Synthesis of ORION Policy</h4>
     <div>
-      <img id="teaser" src="./static/imgs/action_synthesis.svg" alt="No image found."/>
+      <!-- <img id="teaser" src="./static/imgs/action_synthesis.svg" alt="No image found."/> -->
+      <img class="teaser" src="./static/imgs/method_policy.png" alt="No image found."/>
       <!-- <h2 class="subtitle">
         At test time, ORION synthesizes actions for the robot arm to execute.
       </h2> -->
       <div class="content has-text-justified">
-        At test time, ORION first localizes task-relevant objects and retrieves
-        the matched OOG from the generated manipulation plan. Then ORION uses
-        the retrieved OOGs to predict the object motions by first computing
-        global registration of object point clouds and then warping the
-        observed keypoint trajectories from video into the workspace. The
-        predicted trajectories are then used to optimize the SE(3) action
-        sequence of the robot end effector, which is subsequently used to
-        command the robot.
+        At test time, ORION first localizes task-relevant objects and
+        retrieves the matched OOG from the generated manipulation plan. Then, ORION uses the retrieved OOGs to
+        predict the object motions by warping the object-centric feature trajectory from the video to match the test-time
+        observation. The predicted trajectories are then used to optimize the SE(3) action sequence of the robot end
+        effector, which is subsequently used to command the robot.
     </div>
     </div>
   </div>
@@ -451,7 +453,7 @@ Video with Open-World Object Graphs</title>
     <div class="container is-max-desktop">
       <!-- Method Overview. -->
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <h2 class="subtitle is-3">Acknowledgement</h2>
           <div class="content has-text-justified">
             This work has taken place in the Robot Perception and Learning Group (RPL) and Learning Agents Research Group (LARG) at UT Austin. RPL research has been partially supported by the National Science Foundation (FRR2145283, EFRI-2318065) and the Office of Naval Research (N00014-22-1-2204). LARG research is supported in part by NSF (FAIN-2019844, NRT-2125858), ONR (N00014-18-2243), ARO (E2061621), Bosch, Lockheed Martin, and UT Austin's Good Systems grand challenge.  Peter Stone serves as the Executive Director of Sony AI America and receives financial compensation for this work.  The terms of this arrangement have been reviewed and approved by the University of Texas at Austin in accordance with its policy on objectivity in research.
