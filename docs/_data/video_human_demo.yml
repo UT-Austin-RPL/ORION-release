@@ -37,8 +37,6 @@
   type: video/mp4
   caption: "Complext-boat-assembly"
 
-
-
 - class: item item-new
   id: "new"
   src: ./static/videos/human_demo/breakfast.mp4

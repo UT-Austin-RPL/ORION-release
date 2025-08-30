@@ -1,0 +1,30 @@
+
+- class: item item-new
+  id: "new"
+  src: ./static/videos/human_demo/pour_juice.mp4
+  type: video/mp4
+  caption: "Pour-juice"
+
+- class: item item-new
+  id: "new"
+  src: ./static/videos/human_demo/mug_on_red_plate.mp4
+  type: video/mp4
+  caption: "Mug-on-coaster"
+
+- class: item item-new
+  id: "new"
+  src: ./static/videos/human_demo/peas_on_plate.mp4
+  type: video/mp4
+  caption: "Peas-on-plate"
+
+- class: item item-new
+  id: "new"
+  src: ./static/videos/human_demo/llama.mp4
+  type: video/mp4
+  caption: "Succulents-in-llama-vase"
+
+- class: item item-new
+  id: "new"
+  src: ./static/videos/human_demo/rearrange.mp4
+  type: video/mp4
+  caption: "Cheese-on-plate"
