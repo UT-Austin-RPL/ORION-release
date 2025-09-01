@@ -1,30 +1,30 @@
 - class: item item-camera
   id: "camera"
-  src: ./static/videos/rollouts/pour_juice/1.mp4
+  src: ./static/videos/rollouts/rgb_demo//pour_juice/1.mp4
   type: video/mp4
   caption: ""
 
 - class: item item-camera
   id: "camera"
-  src: ./static/videos/rollouts/pour_juice/2.mp4
+  src: ./static/videos/rollouts/rgb_demo//pour_juice/2.mp4
   type: video/mp4
   caption: ""
 
 - class: item item-camera
   id: "camera"
-  src: ./static/videos/rollouts/pour_juice/3.mp4
+  src: ./static/videos/rollouts/rgb_demo//pour_juice/3.mp4
   type: video/mp4
   caption: ""
 
 - class: item item-camera
   id: "camera"
-  src: ./static/videos/rollouts/pour_juice/4.mp4
+  src: ./static/videos/rollouts/rgb_demo//pour_juice/4.mp4
   type: video/mp4
   caption: ""
 
 - class: item item-camera
   id: "camera"
-  src: ./static/videos/rollouts/pour_juice/5.mp4
+  src: ./static/videos/rollouts/rgb_demo//pour_juice/5.mp4
   type: video/mp4
   caption: ""
 
