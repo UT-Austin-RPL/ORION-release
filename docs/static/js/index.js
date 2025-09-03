@@ -267,4 +267,70 @@ $(document).ready(function() {
   // });
 })
 
+function loadSlideVideos($slide) {
+  $slide.find('video[data-src]').each(function() {
+    if (!this.src) { this.src = this.dataset.src; this.load(); }
+  });
+}
+function unloadSlideVideos($slide) {
+  $slide.find('video').each(function() {
+    if (this.src) { this.pause(); this.removeAttribute('src'); this.load(); }
+  });
+}
 
+// after initializing slick:
+$('.robot-one-video-slick').on('init', function(event, slick) {
+  // load the initial slides (current, and maybe next/prev)
+  const $current = $(slick.$slides.get(slick.currentSlide));
+  loadSlideVideos($current);
+  // optionally load neighbors:
+  loadSlideVideos($(slick.$slides.get((slick.currentSlide+1) % slick.slideCount)));
+});
+
+$('.robot-one-video-slick').on('afterChange', function(event, slick, currentSlide) {
+  // unload all slides first (or only unload slides far away)
+  $(slick.$slides).each(function(i, el) {
+    unloadSlideVideos($(el));
+  });
+  // load the current slide and its neighbors
+  loadSlideVideos($(slick.$slides.get(currentSlide)));
+  loadSlideVideos($(slick.$slides.get((currentSlide+1) % slick.slideCount)));
+  loadSlideVideos($(slick.$slides.get((currentSlide-1 + slick.slideCount) % slick.slideCount)));
+});
+
+
+
+$(document).ready(function() {
+  // default: show RGB-D, hide RGB-only
+  $('#rgbonly-section').hide();
+  $('#btn-rgbd').addClass('is-primary');
+
+  $('#btn-rgbd').on('click', function() {
+    if ($('#rgbd-section').is(':hidden')) {
+      $('#rgbd-section').show();
+      $('#rgbonly-section').hide();
+      $('#btn-rgbd').addClass('is-primary');
+      $('#btn-rgbonly').removeClass('is-primary');
+      // if you use slick and items were hidden, refresh them:
+      try {
+        $('#rgbd-section .example-slick, #rgbd-section .robot-one-video-slick, #rgbd-section .robot-three-video-slick')
+          .slick('refresh')
+          .slick('setPosition');
+      } catch (e) { /* ignored */ }
+    }
+  });
+
+  $('#btn-rgbonly').on('click', function() {
+    if ($('#rgbonly-section').is(':hidden')) {
+      $('#rgbd-section').hide();
+      $('#rgbonly-section').show();
+      $('#btn-rgbonly').addClass('is-primary');
+      $('#btn-rgbd').removeClass('is-primary');
+      try {
+        $('#rgbonly-section .example-slick, #rgbonly-section .robot-one-video-slick, #rgbonly-section .robot-three-video-slick')
+          .slick('refresh')
+          .slick('setPosition');
+      } catch (e) { /* ignored */ }
+    }
+  });
+});
